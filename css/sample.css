@@ -63,8 +63,9 @@ li{
     display:table-cell;  /* 定義 */
     cursor: pointer;
 }
-li:hover{
-    transition:all 0.3s;
+
+.gu_btn:hover, .cho_btn:hover, .pa_btn:hover, .uranaisuru:hover {
+    transition: all 0.3s;
     transform: scale(1.2);
 }
 
@@ -84,28 +85,26 @@ li:hover{
     overflow: hidden;
 }
 
-.uranaiinu img {
-    width: 20%;
+
+
+.uranaiinu {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
 }
 
-.text {
-    position: absolute;
-    top: 50%; /* 画像の中央に配置 */
-    left: 50%;
-    transform: translate(-50%, -50%); /* 中央揃え */
+.uranaiinu li {
+    list-style-type: none;
+    margin: 10px;
     text-align: center;
 }
 
-.text span {
-    display: block; /* ブロック要素にして縦に並べる */
-    color: white; /* 文字は白に */
-    font-family: Quicksand, sans-serif; /* Google Font */
-}
-
-.text p {
-    color: white; /* 文字は白に */
-    font-family: Quicksand, sans-serif; /* Google Font */
-    margin: 0;
+.uranaiinu img {
+    display: block;
+    margin: 0 auto;
+    max-width: 100px; /* 画像のサイズを適切に調整 */
+    height: auto;
 }
 
 .footer {

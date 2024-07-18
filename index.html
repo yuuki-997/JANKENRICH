@@ -25,14 +25,14 @@
           <p>ねことじゃんけん！いぬの手をえらんでね</p>
       </div>
     <ul class="inujaul">
-      <li id="gu_btn"><img src="./img/inugu.jpg" alt="inugu" class="inuja"/></li>
-      <li id="cho_btn"><img src="./img/inucyo.jpg" alt="inucyo" class="inuja" /></li>
-      <li id="par_btn"><img src="./img/inupa.jpg" alt="inupa" class="inuja" /></li>
+      <li id="gu_btn" class="gu_btn"><img src="./img/inugu.jpg" alt="inugu" class="inuja"/></li>
+      <li id="cho_btn" class="cho_btn"><img src="./img/inucyo.jpg" alt="inucyo" class="inuja" /></li>
+      <li id="par_btn" class="pa_btn"><img src="./img/inupa.jpg" alt="inupa" class="inuja" /></li>
     </ul>
     <hr width="1000">
     <ul>
-      <li id="nekonote">ねこの手は？<span id="pc_hands">なに？</span></li>
-      <li>結果は．．．<span id="judgment">ニャー</span></li>
+      <li id="nekonote">ねこの手は？<span id="pc_hands"><img src="./img/neko.jpg" class ="inuja"></span></li>
+      <li>結果は．．．<span id="judgment"><img src="./img/inu.jpg" class ="inuja"></span></li>
     </ul>
   </section>
 
@@ -42,15 +42,26 @@
     </div>
 
     <div class="uranaiinu">
-        <li id="uranaisuru">
-            <img src="./img/uranaiinu.jpg">
+        <li id="uranaisuru" class="uranaisuru">
             <div class="text-overlay">
-                <span id="unsei">運勢</span>
+                <span id="unsei" class="unsei">運勢</span>
                 <p>のあなたの運勢は？</p>
             </div>
+            <img src="./img/uranaiinu.jpg">
         </li>
         <li id="uranaijudgment">
-            <img src="./img/uranaiinu.jpg">
+            <p>あなたの運勢</p>
+            <img src="./img/suisyou.png">
+            <p><span id="uranaijudgment"></span><span id="uranaijudgmenttext"></span></p>
+        </li>
+        <li id="luckyitem">
+            <p>ラッキーカラー</p>
+            <img src="./img/color.png">
+            <p><span id="uranaijudgment"></span><span id="uranaijudgmenttext"></span></p>
+        </li>
+        <li id="luckyitem">
+            <p>ラッキーアイテム</p>
+            <img src="./img/item.png">
             <p><span id="uranaijudgment"></span><span id="uranaijudgmenttext"></span></p>
         </li>
     </div>
@@ -183,17 +194,17 @@ $("#uranaisuru").on("click", function() {
     if (n == 1) {
         $("#uranaijudgmenttext").html("大吉！！！");
         $("#uranaijudgment").css("color", "#ff0000");
-        $("#uranaijudgment").html('<img src="./img/hero.jpg" alt="nekocho" width="30%">');
+        $("#uranaijudgment").html('<img src="./img/hero.jpg" alt="nekocho">');
     }
     if (n == 2) {
         $("#uranaijudgmenttext").html("小吉！");
         $("#uranaijudgment").css("color", "#ff0000");
-        $("#uranaijudgment").html('<img src="./img/neru.jpg" alt="nekocho" width="30%">');
+        $("#uranaijudgment").html('<img src="./img/neru.jpg" alt="nekocho">');
     }
     if (n == 3) {
         $("#uranaijudgmenttext").html("中吉！！");
         $("#uranaijudgment").css("color", "#ff0000");
-        $("#uranaijudgment").html('<img src="./img/osanpo.jpg" alt="nekocho" width="30%">');
+        $("#uranaijudgment").html('<img src="./img/osanpo.jpg" alt="nekocho">');
     }
 
     // リセットボタンを表示
@@ -202,11 +213,6 @@ $("#uranaisuru").on("click", function() {
 
 // リセットボタンのイベントハンドラ
 $("#resetButton").on("click", function() {
-    // 占い結果をクリア
-    $("#uranaijudgment").html("");
-    $("#uranaijudgmenttext").html("");
-    $("#uranaijudgment").css("color", "");
-
     // 再度占いボタンを有効化
     $("#uranaisuru").on("click", function() {
         const r = Math.random() * 3;
@@ -216,17 +222,17 @@ $("#resetButton").on("click", function() {
         if (n == 1) {
             $("#uranaijudgmenttext").html("大吉！！！");
             $("#uranaijudgment").css("color", "#ff0000");
-            $("#uranaijudgment").html('<img src="./img/hero.jpg" alt="nekocho" width="30%">');
+            $("#uranaijudgment").html('<img src="./img/hero.jpg" alt="nekocho">');
         }
         if (n == 2) {
             $("#uranaijudgmenttext").html("小吉！");
             $("#uranaijudgment").css("color", "#ff0000");
-            $("#uranaijudgment").html('<img src="./img/neru.jpg" alt="nekocho" width="30%">');
+            $("#uranaijudgment").html('<img src="./img/neru.jpg" alt="nekocho">');
         }
         if (n == 3) {
             $("#uranaijudgmenttext").html("中吉！！");
             $("#uranaijudgment").css("color", "#ff0000");
-            $("#uranaijudgment").html('<img src="./img/osanpo.jpg" alt="nekocho" width="30%">');
+            $("#uranaijudgment").html('<img src="./img/osanpo.jpg" alt="nekocho">');
         }
 
         // ボタンを再度無効化
