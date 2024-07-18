@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<script src="js/jquery-2.1.3.min.js"></script>
+<link rel="stylesheet" href="css/sample.css">
+<title>Beely's Game Room</title>
+</head>
+<body>
+
+  <header>
+    <img src="./img/BeeleyGameRoom.png" alt="header">
+      <ul class="menu">
+          <li><a href="#janken">じゃんけん</a></li>
+          <li><a href="#uranai">占い</a></li>
+      </ul>
+  </header>
+
+<main>
+  <!-- じゃんけんセクション -->
+  <section id="janken">
+      <div class="wrapper">
+          <h2>じゃんけん</h2>
+          <p>ねことじゃんけん！いぬの手をえらんでね</p>
+      </div>
+    <ul class="inujaul">
+      <li id="gu_btn"><img src="./img/inugu.jpg" alt="inugu" class="inuja"/></li>
+      <li id="cho_btn"><img src="./img/inucyo.jpg" alt="inucyo" class="inuja" /></li>
+      <li id="par_btn"><img src="./img/inupa.jpg" alt="inupa" class="inuja" /></li>
+    </ul>
+    <hr width="1000">
+    <ul>
+      <li id="nekonote">ねこの手は？<span id="pc_hands">なに？</span></li>
+      <li>結果は．．．<span id="judgment">ニャー</span></li>
+    </ul>
+  </section>
+
+  <section id="uranai">
+    <div class="wrapper">
+        <h2>占い</h2>
+    </div>
+
+    <div class="uranaiinu">
+        <li id="uranaisuru">
+            <img src="./img/uranaiinu.jpg">
+            <div class="text-overlay">
+                <span id="unsei">運勢</span>
+                <p>のあなたの運勢は？</p>
+            </div>
+        </li>
+        <li id="uranaijudgment">
+            <img src="./img/uranaiinu.jpg">
+            <p><span id="uranaijudgment"></span><span id="uranaijudgmenttext"></span></p>
+        </li>
+    </div>
+
+    <button id="resetButton" style="display: none;">もう一回？？</button>
+</section>
+
+<div class="footer">
+    <p class="fp">
+      copyrights 2024 Beely's Game Room All RIghts Reserved.
+    </p>
+  </div>
+</main>
+
+<footer></footer>
+<script>
+//じゃんけん用のSCRIPTを書いてください
+
+// じゃんけん
+$("#gu_btn").on("click",function(){
+    const r = Math.random()*3; //小数点0
+    const n = Math.ceil(r);    //繰り上げ0.01➡1
+    console.log(n);
+if(n == 1){
+    $("#pc_hands").html('<img src="./img/nekogu.jpg"alt="nekogu" width="30%">');
+    $("#pc_hands").css("color","#ff0000");
+    // $("#pc_hands").fadeOut(3000).fadeIn(3000);
+    $("#judgment").html('<img src="./img/inuagain.jpg"alt="nekogu" width="30%">');
+    // $("#judgment").css("color","#ff0000");
+    // $("#judgment").fadeOut(3000).fadeIn(3000);    
+}
+if(n == 2){
+    $("#pc_hands").html('<img src="./img/nekocho.jpg"alt="nekocho" width="30%">');
+    $("#pc_hands").css("color","#ff0000");
+    // $("#pc_hands").fadeOut(3000).fadeIn(3000);
+    $("#judgment").html('<img src="./img/inuwin.jpg"alt="nekogu" width="30%">');
+    // $("#judgment").css("color","#ff0000");
+    // $("#judgment").fadeOut(3000).fadeIn(3000);  
+}
+if(n == 3){
+    $("#pc_hands").html('<img src="./img/nekopa.jpg"alt="nekopa" width="30%">');
+    $("#pc_hands").css("color","#ff0000");
+    // $("#pc_hands").fadeOut(3000).fadeIn(3000);
+    $("#judgment").html('<img src="./img/inulose.png"alt="nekogu" width="30%">');
+    // $("#judgment").css("color","#ff0000");
+    // $("#judgment").fadeOut(3000).fadeIn(3000);  
+}
+});
+
+$("#cho_btn").on("click",function(){
+    const r = Math.random()*3; //小数点0
+    const n = Math.ceil(r);    //繰り上げ0.01➡1
+    console.log(n);
+if(n == 1){
+    $("#pc_hands").html('<img src="./img/nekogu.jpg"alt="nekogu" width="30%">');
+    $("#pc_hands").css("color","#ff0000");
+    // $("#pc_hands").fadeOut(3000).fadeIn(3000);
+    $("#judgment").html('<img src="./img/inulose.png"alt="nekogu" width="30%">');
+    // $("#judgment").css("color","#ff0000");
+    // $("#judgment").fadeOut(3000).fadeIn(3000);    
+}
+if(n == 2){
+    $("#pc_hands").html('<img src="./img/nekocho.jpg"alt="nekocho" width="30%">');
+    $("#pc_hands").css("color","#ff0000");
+    // $("#pc_hands").fadeOut(3000).fadeIn(3000);
+    $("#judgment").html('<img src="./img/inuagain.jpg"alt="nekogu" width="30%">');
+    // $("#judgment").css("color","#ff0000");
+    // $("#judgment").fadeOut(3000).fadeIn(3000);  
+}
+if(n == 3){
+    $("#pc_hands").html('<img src="./img/nekopa.jpg"alt="nekopa" width="30%">');
+    $("#pc_hands").css("color","#ff0000");
+    // $("#pc_hands").fadeOut(3000).fadeIn(3000);
+    $("#judgment").html('<img src="./img/inuwin.jpg"alt="nekogu" width="30%">');
+    // $("#judgment").css("color","#ff0000");
+    // $("#judgment").fadeOut(3000).fadeIn(3000);  
+}
+});
+
+$("#par_btn").on("click",function(){
+    const r = Math.random()*3; //小数点0
+    const n = Math.ceil(r);    //繰り上げ0.01➡1
+    console.log(n);
+if(n == 1){
+    $("#pc_hands").html('<img src="./img/nekogu.jpg"alt="nekogu" width="30%">');
+    $("#pc_hands").css("color","#ff0000");
+    // $("#pc_hands").fadeOut(3000).fadeIn(3000);
+    $("#judgment").html('<img src="./img/inuwin.jpg"alt="nekogu" width="30%">');
+    // $("#judgment").css("color","#ff0000");
+    // $("#judgment").fadeOut(3000).fadeIn(3000);    
+}
+if(n == 2){
+    $("#pc_hands").html('<img src="./img/nekocho.jpg"alt="nekocho" width="30%">');
+    $("#pc_hands").css("color","#ff0000");
+    // $("#pc_hands").fadeOut(3000).fadeIn(3000);
+    $("#judgment").html('<img src="./img/inulose.png"alt="nekogu" width="30%">');
+    // $("#judgment").css("color","#ff0000");
+    // $("#judgment").fadeOut(3000).fadeIn(3000);  
+}
+if(n == 3){
+    $("#pc_hands").html('<img src="./img/nekopa.jpg"alt="nekopa" width="30%">');
+    $("#pc_hands").css("color","#ff0000");
+    // $("#pc_hands").fadeOut(3000).fadeIn(3000);
+    $("#judgment").html('<img src="./img/inuagain.jpg"alt="nekogu" width="30%">');
+    // $("#judgment").css("color","#ff0000");
+    // $("#judgment").fadeOut(3000).fadeIn(3000);  
+}
+});
+
+//uranai 
+document.getElementById("unsei").innerHTML = unsei();  
+
+function unsei() {
+    const now = new Date();
+    const year = now.getFullYear();
+    const month = now.getMonth() + 1;
+    const date = now.getDate();
+    const unsei = year + "年" + month + "月" + date + "日";
+    return unsei;
+}
+
+$("#uranaisuru").on("click", function() {
+    // ボタンを無効化
+    $(this).off("click");
+
+    const r = Math.random() * 3;
+    const n = Math.ceil(r);
+    console.log(n);
+
+    if (n == 1) {
+        $("#uranaijudgmenttext").html("大吉！！！");
+        $("#uranaijudgment").css("color", "#ff0000");
+        $("#uranaijudgment").html('<img src="./img/hero.jpg" alt="nekocho" width="30%">');
+    }
+    if (n == 2) {
+        $("#uranaijudgmenttext").html("小吉！");
+        $("#uranaijudgment").css("color", "#ff0000");
+        $("#uranaijudgment").html('<img src="./img/neru.jpg" alt="nekocho" width="30%">');
+    }
+    if (n == 3) {
+        $("#uranaijudgmenttext").html("中吉！！");
+        $("#uranaijudgment").css("color", "#ff0000");
+        $("#uranaijudgment").html('<img src="./img/osanpo.jpg" alt="nekocho" width="30%">');
+    }
+
+    // リセットボタンを表示
+    $("#resetButton").show();
+});
+
+// リセットボタンのイベントハンドラ
+$("#resetButton").on("click", function() {
+    // 占い結果をクリア
+    $("#uranaijudgment").html("");
+    $("#uranaijudgmenttext").html("");
+    $("#uranaijudgment").css("color", "");
+
+    // 再度占いボタンを有効化
+    $("#uranaisuru").on("click", function() {
+        const r = Math.random() * 3;
+        const n = Math.ceil(r);
+        console.log(n);
+
+        if (n == 1) {
+            $("#uranaijudgmenttext").html("大吉！！！");
+            $("#uranaijudgment").css("color", "#ff0000");
+            $("#uranaijudgment").html('<img src="./img/hero.jpg" alt="nekocho" width="30%">');
+        }
+        if (n == 2) {
+            $("#uranaijudgmenttext").html("小吉！");
+            $("#uranaijudgment").css("color", "#ff0000");
+            $("#uranaijudgment").html('<img src="./img/neru.jpg" alt="nekocho" width="30%">');
+        }
+        if (n == 3) {
+            $("#uranaijudgmenttext").html("中吉！！");
+            $("#uranaijudgment").css("color", "#ff0000");
+            $("#uranaijudgment").html('<img src="./img/osanpo.jpg" alt="nekocho" width="30%">');
+        }
+
+        // ボタンを再度無効化
+        $(this).off("click");
+        // リセットボタンを表示
+        $("#resetButton").show();
+    });
+
+    // リセットボタンを非表示
+    $(this).hide();
+});
+
+
+    
+
+</script>
+</body>
+</html>
