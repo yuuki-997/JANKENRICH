@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+    <link rel="icon" href="./img/Beeleyfa.png">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width">
@@ -49,20 +50,20 @@
             </div>
             <img src="./img/uranaiinu.jpg">
         </li>
-        <li id="uranaijudgment">
+        <li id="uranaijudgmenta">
             <p>あなたの運勢</p>
-            <img src="./img/suisyou.png">
-            <p><span id="uranaijudgment"></span><span id="uranaijudgmenttext"></span></p>
+            <img src="./img/suisyou.png" id="suisyou">
+            <p><span id="uranaijudgment"></span></p>
         </li>
-        <li id="luckyitem">
-            <p>ラッキーカラー</p>
-            <img src="./img/color.png">
-            <p><span id="uranaijudgment"></span><span id="uranaijudgmenttext"></span></p>
+        <li id="uranaicolor">
+            <p id="colorp">ラッキーカラー</p>
+            <img src="./img/color.png" id="colorImage">
+            <canvas id="canvas" style="display:none;"></canvas>
         </li>
-        <li id="luckyitem">
+        <li id="uranaiitema">
             <p>ラッキーアイテム</p>
-            <img src="./img/item.png">
-            <p><span id="uranaijudgment"></span><span id="uranaijudgmenttext"></span></p>
+            <img src="./img/item.png" id="itemm">
+            <p><span id="uranaiitem"></span></p>
         </li>
     </div>
 
@@ -190,6 +191,12 @@ $("#uranaisuru").on("click", function() {
     const r = Math.random() * 3;
     const n = Math.ceil(r);
     console.log(n);
+    const x = Math.random() * 3;
+    const m = Math.ceil(x);
+    console.log(m);
+    const y = Math.random() * 3;
+    const l = Math.ceil(y);
+    console.log(l);
 
     if (n == 1) {
         $("#uranaijudgmenttext").html("大吉！！！");
@@ -206,6 +213,37 @@ $("#uranaisuru").on("click", function() {
         $("#uranaijudgment").css("color", "#ff0000");
         $("#uranaijudgment").html('<img src="./img/osanpo.jpg" alt="nekocho">');
     }
+    if (m == 1) {
+        const canvas = document.getElementById("canvas");
+        const ctx = canvas.getContext("2d");
+        ctx.fillStyle = "blue";
+        ctx.fillRect(100, 10, 100, 100);
+    }
+    if (m == 2) {
+        const canvas = document.getElementById("canvas");
+        const ctx = canvas.getContext("2d");
+        ctx.fillStyle = "red";
+        ctx.fillRect(100, 10, 100, 100);
+    }
+    if (m == 3) {
+        const canvas = document.getElementById("canvas");
+        const ctx = canvas.getContext("2d");
+        ctx.fillStyle = "green";
+        ctx.fillRect(100, 10, 100, 100);
+    }
+    if (l == 1) {
+        $("#uranaiitem").html('<img src="./img/clock.png" alt="nekocho">');
+        }
+        if (l == 2) {
+        $("#uranaiitem").html('<img src="./img/pack.png" alt="nekocho">');
+        }      
+        if (l == 3) {
+        $("#uranaiitem").html('<img src="./img/headphone.png" alt="nekocho">');
+        }
+    $("#colorImage").hide();
+    $("#suisyou").hide();
+    $("#itemm").hide();
+    $("#canvas").show();
 
     // リセットボタンを表示
     $("#resetButton").show();
@@ -213,11 +251,23 @@ $("#uranaisuru").on("click", function() {
 
 // リセットボタンのイベントハンドラ
 $("#resetButton").on("click", function() {
+    $("#colorImage").show();
+    $("#suisyou").show();
+    $("#itemm").show();
+    $("#canvas").hide();
+    $("#uranaiitem").hide();
+    $("#uranaijudgment").hide();
     // 再度占いボタンを有効化
     $("#uranaisuru").on("click", function() {
         const r = Math.random() * 3;
         const n = Math.ceil(r);
         console.log(n);
+        const x = Math.random() * 3;
+        const m = Math.ceil(x);
+        console.log(m);
+        const y = Math.random() * 3;
+        const l = Math.ceil(y);
+        console.log(l);
 
         if (n == 1) {
             $("#uranaijudgmenttext").html("大吉！！！");
@@ -234,12 +284,47 @@ $("#resetButton").on("click", function() {
             $("#uranaijudgment").css("color", "#ff0000");
             $("#uranaijudgment").html('<img src="./img/osanpo.jpg" alt="nekocho">');
         }
+        if (m == 1) {
+        const canvas = document.getElementById("canvas");
+        const ctx = canvas.getContext("2d");
+        ctx.fillStyle = "blue";
+        ctx.fillRect(100, 10, 100, 100);
+        }
+        if (m == 2) {
+        const canvas = document.getElementById("canvas");
+        const ctx = canvas.getContext("2d");
+        ctx.fillStyle = "red";
+        ctx.fillRect(100, 10, 100, 100);
+        }
+        if (m == 3) {
+        const canvas = document.getElementById("canvas");
+        const ctx = canvas.getContext("2d");
+        ctx.fillStyle = "green";
+        ctx.fillRect(100, 10, 100, 100);
+        }
+        if (l == 1) {
+        $("#uranaiitem").html('<img src="./img/clock.png" alt="nekocho">');
+        }
+        if (l == 2) {
+        $("#uranaiitem").html('<img src="./img/pack.png" alt="nekocho">');
+        }      
+        if (l == 3) {
+        $("#uranaiitem").html('<img src="./img/headphone.png" alt="nekocho">');
+        }
+        
 
         // ボタンを再度無効化
         $(this).off("click");
         // リセットボタンを表示
         $("#resetButton").show();
+        $("#colorImage").hide();
+        $("#suisyou").hide();
+        $("#itemm").hide();
+        $("#canvas").show();
+        $("#uranaiitem").show();
+        $("#uranaijudgment").show();
     });
+
 
     // リセットボタンを非表示
     $(this).hide();

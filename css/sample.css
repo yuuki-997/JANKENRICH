@@ -103,9 +103,10 @@ li{
 .uranaiinu img {
     display: block;
     margin: 0 auto;
-    max-width: 100px; /* 画像のサイズを適切に調整 */
-    height: auto;
+    height: 150px; /* 画像の高さを揃える */
+    object-fit: cover; /* 画像が指定された高さに収まるように調整 */
 }
+
 
 .footer {
     background-color: #707070; /* フッターの背景色 */
