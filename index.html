@@ -51,7 +51,7 @@
             <img src="./img/uranaiinu.jpg">
         </li>
         <li id="uranaijudgmenta">
-            <p>あなたの運勢</p>
+            <p>運勢</p>
             <img src="./img/suisyou.png" id="suisyou">
             <p><span id="uranaijudgment"></span></p>
         </li>
@@ -184,9 +184,11 @@ function unsei() {
     return unsei;
 }
 
+
 $("#uranaisuru").on("click", function() {
     // ボタンを無効化
     $(this).off("click");
+   
 
     const r = Math.random() * 3;
     const n = Math.ceil(r);
@@ -198,6 +200,8 @@ $("#uranaisuru").on("click", function() {
     const l = Math.ceil(y);
     console.log(l);
 
+
+  
     if (n == 1) {
         $("#uranaijudgmenttext").html("大吉！！！");
         $("#uranaijudgment").css("color", "#ff0000");
@@ -241,13 +245,14 @@ $("#uranaisuru").on("click", function() {
         $("#uranaiitem").html('<img src="./img/headphone.png" alt="nekocho">');
         }
     $("#colorImage").hide();
-    $("#suisyou").hide();
     $("#itemm").hide();
+    $("#suisyou").hide();
     $("#canvas").show();
 
     // リセットボタンを表示
     $("#resetButton").show();
 });
+
 
 // リセットボタンのイベントハンドラ
 $("#resetButton").on("click", function() {
